@@ -350,7 +350,11 @@ body {
         height: 3.5vh;
         border-radius: 5px;
         margin-top: 30px;
+<<<<<<< HEAD
         margin-left: 46.125vw;
+=======
+        margin-left: 46.125%;
+>>>>>>> fe086455de0b44ea187aa5918fd1c4591ea784ee
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
     }
