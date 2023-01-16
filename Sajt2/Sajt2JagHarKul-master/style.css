@@ -2,7 +2,7 @@
 /* GÄLLER FÖR SAMTLIGA SIDOR ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@200;300;600;900&display=swap");
 :root {
-    --grön: #598b2c;
+    --grön: #80b850;
     --mörk-grön: #11270b;
     --gul: #f9dc5c;
     --blå: #42a1d1;
@@ -10,32 +10,16 @@
 }
 
 * {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
 body {
     font-family: "Sofia Sans Extra Condensed", sans-serif;
 }
-@media screen and (max-width:450px){  .topdiv {
-        font-weight: 600;
-        position: fixed;
-        top: 0;
-        width: 100vw;
-        height: 10vh;
-        box-shadow: rgb(47, 47, 47) 0px 5px 5px;
-        font-size: 65px;
-        text-align: center;
-        line-height: 10vh;
-        vertical-align: middle;
-        background-color: var(--blå);
-        z-index: 1;
-    }
-    .botdiv {
-        width: 100vw;
-        height: 10vh;
-        background-color: var(--blå);
-        margin-top: 90vh;
-    }}
+/* @media screen and (max-width: 450px) {
+
+} */
 
 @media screen and (min-width: 992px) {
     .topdiv {
@@ -49,14 +33,20 @@ body {
         text-align: center;
         line-height: 10vh;
         vertical-align: middle;
-        background-color: var(--blå);
+        background-color: var(--grön);
         z-index: 1;
     }
-    .botdiv {
+    .bot-flexbox {
+        position: absolute;
+        font-weight: 300;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        line-height: 10vh;
         width: 100vw;
         height: 10vh;
-        background-color: var(--blå);
-        margin-top: 90vh;
+        background-color: var(--grön);
+        top: 100vh;
     }
 }
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -83,7 +73,7 @@ body {
     }
 
     #menuToggle input {
-        color: rgb(0, 60, 255);
+        color: var(--grön);
         width: 70px;
         height: 70px;
         position: fixed;
@@ -145,8 +135,8 @@ body {
         top: 0vh;
         left: 0vw;
         column-gap: 50px;
-        padding-top: 10vh;
-        background: var(--blå);
+        padding-top: 7.5vh;
+        background: var(--grön);
         -webkit-font-smoothing: antialiased;
         border-bottom-right-radius: 20px;
         transform: translate(-155%, 0%);
@@ -174,9 +164,25 @@ body {
         border-radius: 7.5px;
     }
     .bild-1-homesidan {
-        margin-top: 100px;
-        aspect-ratio: initial;
-        width: 100%;
+        margin-top: 10vh;
+        width: 100vw;
+    }
+    .vit-gradient-div {
+        position: sticky;
+        width: 100vw;
+        height: 7.5vh;
+        margin-top: -7.5vh;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0),
+            rgb(255, 255, 255, 1)
+        );
+    }
+    .div-skit-hemsidan {
+        width: 100vw;
+    }
+    .h1-skit-hemsidan {
+        width: 100vw;
     }
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -187,7 +193,7 @@ body {
         height: 40vh;
         width: 32.5vw;
         left: 12vw;
-        margin-top: 30vh;
+        top: 30vh;
         background-color: #adadad;
         text-align: center;
         z-index: -1;
@@ -200,7 +206,7 @@ body {
         height: 40vh;
         width: 32.5vw;
         right: 12vw;
-        margin-top: 30vh;
+        top: 30vh;
         background-color: #adadad;
         text-align: center;
         border-radius: 15px;
@@ -223,7 +229,7 @@ body {
         margin-top: 15vh;
     }
     .fa-solid {
-        color: var(--blå);
+        color: var(--grön);
         position: absolute;
         margin-top: 2.5vh;
         margin-left: 30vw;
@@ -249,7 +255,7 @@ body {
     .knapp {
         font-size: 35px;
         color: white;
-        background-color: var(--blå);
+        background-color: var(--grön);
         width: 7.5vw;
         height: 3.5vh;
         border-radius: 5px;
@@ -260,5 +266,8 @@ body {
     }
     ul {
         list-style: none;
+    }
+}
+le: none;
     }
 }
