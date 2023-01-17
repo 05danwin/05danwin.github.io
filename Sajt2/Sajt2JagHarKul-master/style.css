@@ -4,7 +4,7 @@
 :root {
     --grön: #80b850;
     --mörk-grön: #11270b;
-    --gul: #f9dc5c;
+    --gul: #ffc355;
     --blå: #42a1d1;
     --brun: #694a38;
 }
@@ -28,12 +28,12 @@ body {
         top: 0;
         width: 100vw;
         height: 10vh;
-        box-shadow: rgb(47, 47, 47) 0px 5px 5px;
-        font-size: 65px;
+        box-shadow: rgb(0, 0, 0) 0px 3px 10px;
+        font-size: 7vh;
         text-align: center;
         line-height: 10vh;
         vertical-align: middle;
-        background-color: var(--grön);
+        background: linear-gradient(#acf36e, 5%, var(--grön), 95%, #61873f );
         z-index: 1;
     }
     .bot-flexbox {
@@ -41,12 +41,12 @@ body {
         font-weight: 300;
         font-size: 24px;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         line-height: 10vh;
         width: 100vw;
         height: 10vh;
         background-color: var(--grön);
-        top: 100vh;
+        top: 150vh;
     }
 }
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -110,7 +110,8 @@ body {
     #menuToggle input:checked ~ span {
         opacity: 1;
         transform: rotate(0deg);
-        background: #000000;
+        background: var(--gul);
+        transition: transform 0.4s cubic-bezier(0.8, 0.15, 0.05, 1);
     }
 
     #menuToggle input:checked ~ span:nth-last-child(3) {
@@ -128,14 +129,13 @@ body {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        font-size: 50px;
+        font-size: 45px;
         font-weight: 600;
         width: calc(10vw + 70px);
-        height: 20vh;
         top: 0vh;
         left: 0vw;
         column-gap: 50px;
-        padding-top: 7.5vh;
+        padding-top: 10vh;
         background: var(--grön);
         -webkit-font-smoothing: antialiased;
         border-bottom-right-radius: 20px;
@@ -152,49 +152,71 @@ body {
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* HOMESIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
-    h1 {
-        margin-top: -0.5vh;
-    }
     #logga {
         position: absolute;
         right: 0px;
         top: 0px;
         aspect-ratio: 3/2;
-        height: 75px;
+        height: 10vh;
         border-radius: 7.5px;
+        visibility:hidden;
+
     }
     .bild-1-homesidan {
         margin-top: 10vh;
         width: 100vw;
+        z-index:-50;
     }
-    .vit-gradient-div {
+    /* .vit-gradient-div {
         position: sticky;
         width: 100vw;
         height: 7.5vh;
-        margin-top: -7.5vh;
+        margin-top: -8.2vh;
         background: linear-gradient(
             to bottom,
             rgba(255, 255, 255, 0),
             rgb(255, 255, 255, 1)
         );
+    } */
+    .hemsida-innehåll{
+        position:absolute;
+        margin-top:-4px;
+        left:-10vw;
+        width:120vw;
+        height:60vh;
+        background-color: none;
+        box-shadow:rgb(255, 255, 255)-1px -30px 30px;
     }
-    .div-skit-hemsidan {
-        width: 100vw;
+    .hemsida-innehåll-rubrik{
+        position:relative;
+        left:15vw;
+        top:10vh;
+        width:20vw;
+        height:10vh;
+        background-color:none;
+        display:flex;
+        justify-content: space-around;
+        line-height:10vh;
     }
-    .h1-skit-hemsidan {
-        width: 100vw;
-    }
+   .hemsida-innehåll-text{
+    position:relative;
+    left:35vw;
+    width:45vw;
+    background-color:none;
+    font-size:24px;
+    word-wrap:break-word;
+   }
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* ABOUTSIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
     #vänsterkolumn {
         position: absolute;
-        height: 40vh;
+        height: 50vh;
         width: 32.5vw;
         left: 12vw;
-        top: 30vh;
-        background-color: #adadad;
+        top: 35vh;
+        background-color: var(--gul);
         text-align: center;
         z-index: -1;
         border-radius: 15px;
@@ -203,11 +225,11 @@ body {
 
     #högerkolumn {
         position: absolute;
-        height: 40vh;
+        height: 50vh;
         width: 32.5vw;
         right: 12vw;
-        top: 30vh;
-        background-color: #adadad;
+        top: 95vh;
+        background-color: var(--gul);
         text-align: center;
         border-radius: 15px;
         box-shadow: rgb(47, 47, 47) 0px 2px 5px;
@@ -216,6 +238,7 @@ body {
     .bild-1-aboutsidan {
         position: absolute;
         width: 34.5vw;
+        height: 17.25;
         left: 11vw;
         top: 15vh;
         border-radius: 50%;
@@ -229,45 +252,84 @@ body {
         margin-top: 15vh;
     }
     .fa-solid {
-        color: var(--grön);
-        position: absolute;
-        margin-top: 2.5vh;
+        color: var(--gul);
         margin-left: 30vw;
     }
-    .ruta {
+    .kontakt-inputruta {
         width: 35vw;
         height: 30px;
-        margin-top: 30px;
-        margin-left: 32.5%;
+        margin-left: 2.5%;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
         font-size: 24px;
     }
-    .fetruta {
+    .kontakt-inputruta:hover {
+        width: 35vw;
+        height: 30px;
+        margin-left: 2.5%;
+        font-family: "Sofia Sans Extra Condensed", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        background-color: rgb(233, 233, 233);
+    }
+    .kontakt-stor-inputruta {
         width: 35vw;
         height: 100px;
-        margin-top: 30px;
-        margin-left: 32.5%;
+        margin-left: 2.5%;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
         font-size: 24px;
     }
-    .knapp {
-        font-size: 35px;
-        color: white;
-        background-color: var(--grön);
-        width: 7.5vw;
-        height: 3.5vh;
-        border-radius: 5px;
-        margin-top: 30px;
-        margin-left: 46.125vw;
+    .kontakt-stor-inputruta:hover {
+        width: 35vw;
+        height: 100px;
+        margin-left: 2.5%;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
+        font-size: 24px;
+        background-color: rgb(233, 233, 233);
+    }
+    .knapp {
+        font-size: 30px;
+        color: white;
+        background-color: var(--gul);
+        width: 7.5vw;
+        height: 45px;
+        border-radius: 5px;
+        margin-top: 30px;
+        margin-left: 46.25vw;
+        font-family: "Sofia Sans Extra Condensed", sans-serif;
+        font-weight: 600;
+        border-color: white;
     }
     ul {
         list-style: none;
     }
-}
-le: none;
+    .rad{
+        display:flex;
+        flex-direction: row;
+        margin-bottom:40px;
+    }
+    .rad:first-child{
+        margin-top:30px;
+    }
+    .svart-bakgrund{
+        position:fixed;
+        background-color: #000000;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+        z-index:-4;
+        opacity:0.6;
+
+    }
+    .bild-1-kontaktsidan{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+        z-index:-5;
     }
 }
