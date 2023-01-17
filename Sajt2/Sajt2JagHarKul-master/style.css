@@ -3,13 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@200;300;600;900&display=swap");
 :root {
     --grön: #80b850;
+    --grön: #80b850;
     --mörk-grön: #11270b;
+    --gul: #ffc355;
     --gul: #ffc355;
     --blå: #42a1d1;
     --brun: #694a38;
 }
 
 * {
+    overflow-x: hidden;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
@@ -81,6 +84,7 @@ body {
     }
 
     #menuToggle input {
+        color: var(--grön);
         color: var(--grön);
         width: 70px;
         height: 70px;
@@ -238,6 +242,7 @@ body {
         position: absolute;
         width: 34.5vw;
         height: 17.25;
+        height: 17.25;
         left: 11vw;
         top: 15vh;
         border-radius: 50%;
@@ -267,6 +272,7 @@ body {
         width: 30vw;
         height: 30px;
         margin-left: 2.5%;
+        margin-left: 2.5%;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
         font-size: 24px;
@@ -275,21 +281,36 @@ body {
         width: 30vw;
         height: 100px;
         margin-left: 2.5%;
+        margin-left: 2.5%;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
         font-size: 24px;
     }
+    .kontakt-stor-inputruta:hover {
+        width: 35vw;
+        height: 100px;
+        margin-left: 2.5%;
+        font-family: "Sofia Sans Extra Condensed", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        background-color: rgb(233, 233, 233);
+    }
     .knapp {
+        font-size: 30px;
         font-size: 30px;
         color: white;
         background-color: var(--gul);
+        background-color: var(--gul);
         width: 7.5vw;
+        height: 45px;
         height: 45px;
         border-radius: 5px;
         margin-top: 30px;
         margin-left: 46.25vw;
+        margin-left: 46.25vw;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
+        border-color: white;
         border-color: white;
     }
     ul {
