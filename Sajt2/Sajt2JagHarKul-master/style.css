@@ -4,7 +4,7 @@
 :root {
     --grön: #80b850;
     --mörk-grön: #11270b;
-    --gul: #f9dc5c;
+    --gul: #ffc355;
     --blå: #42a1d1;
     --brun: #694a38;
 }
@@ -18,30 +18,38 @@ body {
     font-family: "Sofia Sans Extra Condensed", sans-serif;
 }
 /* @media screen and (max-width: 450px) {
-
 } */
 
 @media screen and (min-width: 992px) {
     .topdiv {
+        /**/
         font-weight: 600;
         position: fixed;
         top: 0;
-        width: 100vw;
+        left: -5vw;
+        width: 110vw;
         height: 10vh;
-        box-shadow: rgb(47, 47, 47) 0px 5px 5px;
-        font-size: 65px;
+        box-shadow: rgb(0, 0, 0) 0px 3px 10px;
+        font-size: 6vh;
         text-align: center;
         line-height: 10vh;
         vertical-align: middle;
-        background-color: var(--grön);
+        background: linear-gradient(#acf36e, 5%, var(--grön), 95%, #61873f);
         z-index: 1;
+    }
+    #logga {
+        position: absolute;
+        right: 6vw;
+        top: 2vh;
+        aspect-ratio: 3/2;
+        height: 6vh;
     }
     .bot-flexbox {
         position: absolute;
         font-weight: 300;
         font-size: 24px;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         line-height: 10vh;
         width: 100vw;
         height: 10vh;
@@ -65,7 +73,7 @@ body {
     #menuToggle a {
         text-decoration: none;
         color: #232323;
-        transition: color 0.3s ease;
+        transition: color 0.5s ease;
     }
 
     #menuToggle a:hover {
@@ -95,7 +103,8 @@ body {
         border-radius: 4px;
         z-index: 2;
         transform-origin: 0px 0px;
-        transition: transform 0.4s cubic-bezier(0.8, 0.15, 0.05, 1);
+        transition: transform 0.4s cubic-bezier(0.8, 0.15, 0.05, 1),
+            background 0.5s ease;
     }
 
     #menuToggle span:nth-child(2) {
@@ -108,13 +117,10 @@ body {
     }
 
     #menuToggle input:checked ~ span {
-        opacity: 1;
-        transform: rotate(0deg);
-        background: #000000;
+        background: var(--gul);
     }
 
     #menuToggle input:checked ~ span:nth-last-child(3) {
-        opacity: 1;
         transform: rotate(0deg) scale(0.66, 1);
     }
 
@@ -126,16 +132,17 @@ body {
         position: fixed;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         text-align: center;
-        font-size: 50px;
+        justify-content: space-around;
+        font-size: 45px;
         font-weight: 600;
         width: calc(10vw + 70px);
-        height: 20vh;
+        height: 15vh;
         top: 0vh;
         left: 0vw;
         column-gap: 50px;
-        padding-top: 7.5vh;
+        padding-top: 10vh;
+        padding-bottom: 2.5vh;
         background: var(--grön);
         -webkit-font-smoothing: antialiased;
         border-bottom-right-radius: 20px;
@@ -152,49 +159,59 @@ body {
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* HOMESIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
-    h1 {
-        margin-top: -0.5vh;
-    }
-    #logga {
-        position: absolute;
-        right: 0px;
-        top: 0px;
-        aspect-ratio: 3/2;
-        height: 75px;
-        border-radius: 7.5px;
-    }
     .bild-1-homesidan {
         margin-top: 10vh;
         width: 100vw;
+        z-index: -50;
     }
-    .vit-gradient-div {
-        position: sticky;
-        width: 100vw;
-        height: 7.5vh;
-        margin-top: -7.5vh;
-        background: linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0),
-            rgb(255, 255, 255, 1)
-        );
+    .hemsida-innehåll {
+        position: absolute;
+        margin-top: -4px;
+        left: -10vw;
+        width: 120vw;
+        height: 22.5vh;
+        background-color: none;
+        box-shadow: rgb(255, 255, 255)-1px -30px 30px;
     }
-    .div-skit-hemsidan {
-        width: 100vw;
+    .hemsida-innehåll-rubrik {
+        position: relative;
+        left: 20vw;
+        top: 10vh;
+        width: 15vw;
+        height: 12.5vh;
+        background-color: none;
+        display: flex;
+        justify-content: space-around;
+        font-size: 4vh;
+        line-height: 12.5vh;
     }
-    .h1-skit-hemsidan {
-        width: 100vw;
+    .hemsida-innehåll-text {
+        position: absolute;
+        left: 35vw;
+        top: 10vh;
+        width: 45vw;
+        height: 12.5vh;
+        background-color: none;
+        font-size: 3vh;
+        word-wrap: break-word;
+        display: flex;
+        align-items: center;
     }
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* ABOUTSIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
     #vänsterkolumn {
+        font-size: 3.5vh;
         position: absolute;
-        height: 40vh;
-        width: 32.5vw;
+        height: 27vh;
+        width: 30.5vw;
         left: 12vw;
-        top: 30vh;
-        background-color: #adadad;
+        top: 35vh;
+        background-color: var(--gul);
+        padding-top: 17vh;
+        padding-left: 1vw;
+        padding-right: 1vw;
         text-align: center;
         z-index: -1;
         border-radius: 15px;
@@ -202,12 +219,16 @@ body {
     }
 
     #högerkolumn {
+        font-size: 3.5vh;
         position: absolute;
-        height: 40vh;
-        width: 32.5vw;
+        height: 42.5vh;
+        width: 30.5vw;
         right: 12vw;
-        top: 30vh;
-        background-color: #adadad;
+        top: 35vh;
+        background-color: var(--gul);
+        padding-top: 1.5vh;
+        padding-left: 1vw;
+        padding-right: 1vw;
         text-align: center;
         border-radius: 15px;
         box-shadow: rgb(47, 47, 47) 0px 2px 5px;
@@ -216,9 +237,19 @@ body {
     .bild-1-aboutsidan {
         position: absolute;
         width: 34.5vw;
+        height: 17.25;
         left: 11vw;
         top: 15vh;
         border-radius: 50%;
+        box-shadow: black 0px 4px 5px;
+    }
+    .bild-2-aboutsidan {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -5;
     }
 }
 
@@ -226,45 +257,68 @@ body {
 /* CONTACTSIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
     form {
-        margin-top: 15vh;
+        margin-top: 35vh;
     }
     .fa-solid {
-        color: var(--grön);
-        position: absolute;
-        margin-top: 2.5vh;
-        margin-left: 30vw;
+        color: var(--gul);
+        margin-left: 31.5vw;
     }
-    .ruta {
-        width: 35vw;
+    .kontakt-inputruta {
+        width: 30vw;
         height: 30px;
-        margin-top: 30px;
-        margin-left: 32.5%;
+        margin-left: 2.5%;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
         font-size: 24px;
     }
-    .fetruta {
-        width: 35vw;
+    .kontakt-stor-inputruta {
+        width: 30vw;
         height: 100px;
-        margin-top: 30px;
-        margin-left: 32.5%;
+        margin-left: 2.5%;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
         font-size: 24px;
     }
     .knapp {
-        font-size: 35px;
+        font-size: 30px;
         color: white;
-        background-color: var(--grön);
+        background-color: var(--gul);
         width: 7.5vw;
-        height: 3.5vh;
+        height: 45px;
         border-radius: 5px;
         margin-top: 30px;
-        margin-left: 46.125vw;
+        margin-left: 46.25vw;
         font-family: "Sofia Sans Extra Condensed", sans-serif;
         font-weight: 600;
+        border-color: white;
     }
     ul {
         list-style: none;
+    }
+    .rad {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 50px;
+    }
+    .rad:first-child {
+        margin-top: 10;
+    }
+    .svart-bakgrund {
+        position: fixed;
+        background-color: #000000;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -4;
+        opacity: 0.6;
+    }
+    .bild-1-kontaktsidan {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -5;
     }
 }
