@@ -1,0 +1,335 @@
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* GÄLLER FÖR SAMTLIGA SIDOR ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@200;300;600;900&display=swap");
+:root {
+    --grön: #80b850;
+    --mörk-grön: #11270b;
+    --gul: #ffc355;
+    --blå: #42a1d1;
+    --brun: #694a38;
+}
+
+* {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Sofia Sans Extra Condensed", sans-serif;
+}
+/* @media screen and (max-width: 450px) {
+
+} */
+
+@media screen and (min-width: 992px) {
+    .topdiv {
+        font-weight: 600;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 10vh;
+        box-shadow: rgb(0, 0, 0) 0px 3px 10px;
+        font-size: 7vh;
+        text-align: center;
+        line-height: 10vh;
+        vertical-align: middle;
+        background: linear-gradient(#acf36e, 5%, var(--grön), 95%, #61873f );
+        z-index: 1;
+    }
+    .bot-flexbox {
+        position: absolute;
+        font-weight: 300;
+        font-size: 24px;
+        display: flex;
+        justify-content: space-evenly;
+        line-height: 10vh;
+        width: 100vw;
+        height: 10vh;
+        background-color: var(--grön);
+        top: 150vh;
+    }
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* HAMBURGARMENYN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+    #menuToggle {
+        display: block;
+        position: fixed;
+        top: calc((10vh - 60px) / 2);
+        left: 5vw;
+        z-index: 1;
+        height: 70px;
+        width: 70px;
+    }
+
+    #menuToggle a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover {
+        color: var(--gul);
+    }
+
+    #menuToggle input {
+        color: var(--grön);
+        width: 70px;
+        height: 70px;
+        position: fixed;
+        top: calc((10vh - 70px) / 2);
+        left: 5vw;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 5;
+    }
+
+    #menuToggle span {
+        display: block;
+        width: 55px;
+        height: 10px;
+        margin-bottom: 5px;
+        margin-left: 7.5px;
+        position: relative;
+        background: #000000; /*hamburgarmenyn innan man clickar*/
+        border-radius: 4px;
+        z-index: 2;
+        transform-origin: 0px 0px;
+        transition: transform 0.4s cubic-bezier(0.8, 0.15, 0.05, 1);
+    }
+
+    #menuToggle span:nth-child(2) {
+        transform-origin: 0% 0%;
+        margin-top: 12.5px;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(0deg);
+        background: var(--gul);
+        transition: transform 0.4s cubic-bezier(0.8, 0.15, 0.05, 1);
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 1;
+        transform: rotate(0deg) scale(0.66, 1);
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(0deg) scale(0.33, 1);
+    }
+
+    #menu {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 45px;
+        font-weight: 600;
+        width: calc(10vw + 70px);
+        top: 0vh;
+        left: 0vw;
+        column-gap: 50px;
+        padding-top: 10vh;
+        background: var(--grön);
+        -webkit-font-smoothing: antialiased;
+        border-bottom-right-radius: 20px;
+        transform: translate(-155%, 0%);
+        transition: transform 0.5s cubic-bezier(0.8, 0.15, 0.05, 1);
+        z-index: 1;
+        box-shadow: rgb(47, 47, 47) 0px 1px 5px;
+    }
+
+    #menuToggle input:checked ~ ul {
+        transform: none;
+    }
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* HOMESIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+    #logga {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        aspect-ratio: 3/2;
+        height: 10vh;
+        border-radius: 7.5px;
+        visibility:hidden;
+
+    }
+    .bild-1-homesidan {
+        margin-top: 10vh;
+        width: 100vw;
+        z-index:-50;
+    }
+    /* .vit-gradient-div {
+        position: sticky;
+        width: 100vw;
+        height: 7.5vh;
+        margin-top: -8.2vh;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0),
+            rgb(255, 255, 255, 1)
+        );
+    } */
+    .hemsida-innehåll{
+        position:absolute;
+        margin-top:-4px;
+        left:-10vw;
+        width:120vw;
+        height:60vh;
+        background-color: none;
+        box-shadow:rgb(255, 255, 255)-1px -30px 30px;
+    }
+    .hemsida-innehåll-rubrik{
+        position:relative;
+        left:15vw;
+        top:10vh;
+        width:20vw;
+        height:10vh;
+        background-color:none;
+        display:flex;
+        justify-content: space-around;
+        line-height:10vh;
+    }
+   .hemsida-innehåll-text{
+    position:relative;
+    left:35vw;
+    width:45vw;
+    background-color:none;
+    font-size:24px;
+    word-wrap:break-word;
+   }
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ABOUTSIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+    #vänsterkolumn {
+        position: absolute;
+        height: 50vh;
+        width: 32.5vw;
+        left: 12vw;
+        top: 35vh;
+        background-color: var(--gul);
+        text-align: center;
+        z-index: -1;
+        border-radius: 15px;
+        box-shadow: rgb(47, 47, 47) 0px 1px 5px;
+    }
+
+    #högerkolumn {
+        position: absolute;
+        height: 50vh;
+        width: 32.5vw;
+        right: 12vw;
+        top: 95vh;
+        background-color: var(--gul);
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: rgb(47, 47, 47) 0px 2px 5px;
+    }
+
+    .bild-1-aboutsidan {
+        position: absolute;
+        width: 34.5vw;
+        height: 17.25;
+        left: 11vw;
+        top: 15vh;
+        border-radius: 50%;
+    }
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* CONTACTSIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+    form {
+        margin-top: 15vh;
+    }
+    .fa-solid {
+        color: var(--gul);
+        margin-left: 30vw;
+    }
+    .kontakt-inputruta {
+        width: 35vw;
+        height: 30px;
+        margin-left: 2.5%;
+        font-family: "Sofia Sans Extra Condensed", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+    }
+    .kontakt-inputruta:hover {
+        width: 35vw;
+        height: 30px;
+        margin-left: 2.5%;
+        font-family: "Sofia Sans Extra Condensed", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        background-color: rgb(233, 233, 233);
+    }
+    .kontakt-stor-inputruta {
+        width: 35vw;
+        height: 100px;
+        margin-left: 2.5%;
+        font-family: "Sofia Sans Extra Condensed", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+    }
+    .kontakt-stor-inputruta:hover {
+        width: 35vw;
+        height: 100px;
+        margin-left: 2.5%;
+        font-family: "Sofia Sans Extra Condensed", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        background-color: rgb(233, 233, 233);
+    }
+    .knapp {
+        font-size: 30px;
+        color: white;
+        background-color: var(--gul);
+        width: 7.5vw;
+        height: 45px;
+        border-radius: 5px;
+        margin-top: 30px;
+        margin-left: 46.25vw;
+        font-family: "Sofia Sans Extra Condensed", sans-serif;
+        font-weight: 600;
+        border-color: white;
+    }
+    ul {
+        list-style: none;
+    }
+    .rad{
+        display:flex;
+        flex-direction: row;
+        margin-bottom:40px;
+    }
+    .rad:first-child{
+        margin-top:30px;
+    }
+    .svart-bakgrund{
+        position:fixed;
+        background-color: #000000;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+        z-index:-4;
+        opacity:0.6;
+
+    }
+    .bild-1-kontaktsidan{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+        z-index:-5;
+    }
+}
