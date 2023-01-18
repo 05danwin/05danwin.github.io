@@ -1,8 +1,10 @@
-/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* GÄLLER ALLTID ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* GÄLLER ALLTID ↓↓↓--------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@200;300;600;900&display=swap");
 :root {
     --grön: #80b850;
+    --grön-highlight: #acf36e;
+    --grön-skugga: #61873f;
     --gul: #ffc355;
     --svart: #000000;
     --grå: #232323;
@@ -17,8 +19,8 @@
 body {
     font-family: "Sofia Sans Extra Condensed", sans-serif;
 }
-/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* GÄLLER FÖR SAMTLIGA SIDOR MEN ÄNDRAS MED MEDIA QUERIES↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* GÄLLER FÖR SAMTLIGA SIDOR MEN ÄNDRAS MED MEDIA QUERIES↓↓↓------------------------------------------------------------------------------------------------------------------- */
 header {
     color: var(--grå);
     font-weight: 600;
@@ -32,7 +34,7 @@ header {
     text-align: center;
     line-height: 10vh;
     vertical-align: middle;
-    background: linear-gradient(#acf36e, 5%, var(--grön), 95%, #61873f);
+    background: linear-gradient(var(--grön-highlight), 5%, var(--grön), 95%, var(--grön-skugga));
     z-index: 1;
 }
 #logga {
@@ -41,11 +43,15 @@ header {
     top: 2vh;
     aspect-ratio: 3/2;
     height: 6vh;
+    transition: 0.3s ease;
+}
+#logga:hover  {
+    transform: scale(1.35);
 }
 .botten-flexbox {
     position: absolute;
     font-weight: 300;
-    font-size: 28px;
+    font-size: 4vh;
     display: flex;
     justify-content: space-evenly;
     line-height: 10vh;
@@ -53,6 +59,18 @@ header {
     height: 10vh;
     background-color: var(--grön);
     top: 100vh;
+}
+.botten-flexbox-contact {
+    position: absolute;
+    font-weight: 300;
+    font-size: 4vh;
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 10vh;
+    width: 100vw;
+    height: 10vh;
+    background: linear-gradient(var(--grön-highlight), 5%, var(--grön), 95%, var(--grön-skugga));
+    top: 125vh;
 }
 @media screen and (max-width: 992px) {
     header {
@@ -68,7 +86,7 @@ header {
         text-align: center;
         line-height: 10vh;
         vertical-align: middle;
-        background: linear-gradient(#acf36e, 5%, var(--grön), 95%, #61873f);
+        background: linear-gradient(var(--grön-highlight), 5%, var(--grön), 95%, var(--grön-skugga));
         z-index: 1;
     }
     #logga {
@@ -90,6 +108,18 @@ header {
         background-color: var(--grön);
         top: 100vh;
     }
+    .botten-flexbox-contact {
+        position: absolute;
+        font-weight: 300;
+        font-size: 28px;
+        display: flex;
+        justify-content: space-evenly;
+        line-height: 10vh;
+        width: 100vw;
+        height: 10vh;
+        background: linear-gradient(var(--grön-highlight), 5%, var(--grön), 95%, var(--grön-skugga));
+        top: 125vh;
+}
 }
 @media screen and (max-width: 600px) {
     header {
@@ -105,7 +135,7 @@ header {
         text-align: center;
         line-height: 10vh;
         vertical-align: middle;
-        background: linear-gradient(#acf36e, 5%, var(--grön), 95%, #61873f);
+        background: linear-gradient(var(--grön-highlight), 5%, var(--grön), 95%, var(--grön-skugga));
         z-index: 1;
     }
     #logga {
@@ -114,7 +144,9 @@ header {
         top: 2vh;
         aspect-ratio: 3/2;
         height: 6vh;
+        transition: transform 0.5s ease;
     }
+
     .botten-flexbox {
         position: absolute;
         font-weight: 300;
@@ -124,10 +156,24 @@ header {
         line-height: 10vh;
         width: 100vw;
         height: 10vh;
-        background-color: var(--grön);
+        background: linear-gradient(var(--grön-highlight), 5%, var(--grön), 95%, var(--grön-skugga));
         top: 100vh;
     }
+    .botten-flexbox-contact {
+        position: absolute;
+        font-weight: 300;
+        font-size: 28px;
+        display: flex;
+        justify-content: space-evenly;
+        line-height: 10vh;
+        width: 100vw;
+        height: 10vh;
+        background: linear-gradient(var(--grön-highlight), 5%, var(--grön), 95%, var(--grön-skugga));
+        top: 125vh;
+    }
 }
+/* @media screen and (max-width: 992px) {
+@media screen and (max-width: 600px) { */
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* HAMBURGARMENYN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 #hamburgarmeny {
@@ -179,12 +225,12 @@ header {
 }
 
 #hamburgarmeny span:nth-child(2) {
-    transform-origin: 0% 0%;
     margin-top: 12.5px;
 }
 
 #hamburgarmeny span:nth-last-child(2) {
     transform-origin: 0% 100%;
+    margin-bottom:0;
 }
 
 #hamburgarmeny input:checked ~ span {
@@ -205,10 +251,10 @@ header {
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 600;
     width: calc(10vw + 70px);
-    height: 20vh;
+    height: 25vh;
     top: 0vh;
     left: 0vw;
     column-gap: 50px;
@@ -220,7 +266,7 @@ header {
     transform: translate(-155%, 0%);
     transition: transform 0.5s cubic-bezier(0.8, 0.15, 0.05, 1);
     z-index: 1;
-    box-shadow: rgb(47, 47, 47) 0px 1px 5px;
+    box-shadow: var(--grå) 0px 1px 5px;
 }
 
 #hamburgarmeny input:checked ~ ul {
@@ -237,17 +283,16 @@ header {
 }
 .hemsida-innehåll {
     position: absolute;
-    margin-top: -4px;
     left: -10vw;
     width: 120vw;
     height: 22.5vh;
     background-color: none;
-    box-shadow: rgb(255, 255, 255)-1px -30px 30px;
+    box-shadow: var(--vit) -1px -30px 30px;
 }
 .hemsida-innehåll-rubrik {
     position: relative;
     left: 20vw;
-    top: 10vh;
+    top: 8vh;
     width: 15vw;
     height: 12.5vh;
     background-color: none;
@@ -259,7 +304,7 @@ header {
 .hemsida-innehåll-text {
     position: absolute;
     left: 35vw;
-    top: 10vh;
+    top: 8vh;
     width: 45vw;
     height: 12.5vh;
     background-color: none;
@@ -275,34 +320,36 @@ header {
 #vänsterkolumn {
     font-size: 3.5vh;
     position: absolute;
-    height: 27vh;
+    height: 26vh;
     width: 30.5vw;
     left: 12vw;
     top: 35vh;
+    line-height:5vh;
     background-color: var(--gul);
-    padding-top: 17vh;
+    padding-top: 22vh;
     padding-left: 1vw;
     padding-right: 1vw;
     text-align: center;
     z-index: -1;
     border-radius: 15px;
-    box-shadow: rgb(47, 47, 47) 0px 1px 5px;
+    box-shadow: var(--grå) 0px 1px 5px;
 }
 
 #högerkolumn {
     font-size: 3.5vh;
     position: absolute;
-    height: 42.5vh;
+    height: 46vh;
     width: 30.5vw;
     right: 12vw;
     top: 35vh;
+    line-height:5vh;
     background-color: var(--gul);
-    padding-top: 1.5vh;
+    padding-top: 2vh;
     padding-left: 1vw;
     padding-right: 1vw;
     text-align: center;
     border-radius: 15px;
-    box-shadow: rgb(47, 47, 47) 0px 2px 5px;
+    box-shadow: var(--grå) 0px 2px 5px;
 }
 
 .bild-1-aboutsidan {
@@ -328,11 +375,13 @@ header {
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* CONTACTSIDAN ↓↓↓----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 form {
-    margin-top: 30vh;
+    margin-top: calc(30vh - 50px);
 }
 .fa-solid {
     color: var(--gul);
-    margin-left: 31.5vw;
+    margin-left: 30.5vw;
+    height:32px;
+    width:32px;
 }
 .kontakt-inputruta {
     width: 30vw;
@@ -341,7 +390,7 @@ form {
     margin-left: 2.5%;
     font-family: "Sofia Sans Extra Condensed", sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 4vh;
 }
 .kontakt-stor-inputruta {
     width: 30vw;
@@ -350,7 +399,7 @@ form {
     margin-left: 2.5%;
     font-family: "Sofia Sans Extra Condensed", sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 4vh;
 }
 
 .knapp {
@@ -377,7 +426,7 @@ ul {
 .rad {
     display: flex;
     flex-direction: row;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 .rad:first-child {
     margin-top: 10;
